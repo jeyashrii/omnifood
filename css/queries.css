@@ -1,0 +1,147 @@
+/* rem and em do not depend on Html font size in media queries.
+instead 1rem=1em=16px*/
+/*below 1344*/
+/*1350%16=84.375=84=84*16=1344*/
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 75em) {
+  /*9px/16px*/
+  .html {
+    font-size: 56.25;
+  }
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+  .headng-tertiary {
+    font-size: 2.4rem;
+  }
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.2rem;
+  }
+  .header {
+    padding: 0 3.2rem;
+  }
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+  .hero {
+    gap: 4.8rem;
+  }
+  .testimonial-container {
+    padding: 9.6rem 3.2rem;
+  }
+}
+/*below 944px (for tablets)*/
+@media (max-width: 59em) {
+  html {
+    font-size: 50%;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 6.4rem;
+  }
+  .hero-img {
+    width: 60%;
+  }
+  .hero-text-box,
+  .hero-img-box {
+    text-align: center;
+  }
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+  .logos img {
+    height: 2.4rem;
+  }
+  .step-number {
+    font-size: 7.4rem;
+  }
+
+  .meal-content {
+    padding: 3.2rem 4.2rem 3.2rem 3.2rem;
+  }
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    grid-template-columns: 3fr 2fr;
+  }
+  .cta-form{
+    grid-template-columns: 1fr;
+
+  }
+  .btn-form{
+margin-top:1.2rem;
+  }
+  .btn-mobile-nav{
+    display:block;
+  }
+  .main-nav{
+    position:absolute;
+    background-color:rgba(255,255,255,0.97);
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    /*Hide NAavigation*/
+    /*display:none;*/
+    /*the above allow no transitions or animations on nav*/
+    /*so hide using the below technique*/
+    /*1.hide visually*/
+    opacity:0;
+    /*2hide from keyboard accesibility*/
+    pointer-events:none;
+    /*3. screen readers*/
+    visibility:hidden;
+    transition:all 0.5s;
+    /*we are gonna move this to right of screen then add a animation as its coming from right side*/
+    transform:translateX(100%);/*if u scrolll right u can see ,so we should set overflow transate x to hidden in body and also in htnl*/
+
+  }
+  .nav-open .main-nav{
+    opacity:1;
+    pointer-events:auto;
+    visibility:visible;
+    transform:translateX(0);
+  }
+  .nav-open .icon-mobile-nav[name="close-outline"]{
+    display:block;
+    }
+    .nav-open .icon-mobile-nav[name="menu-outline"]{
+      display:none;
+      }
+  .main-nav-list{
+    flex-direction:column;
+    gap:4.8rem;
+  }
+  .main-nav-link:link,
+  .main-nav-link:visited{
+    font-size: 3rem;
+  }
+}
+/*below 704px for smaller tablets*/
+
+@media(max-width:44em){
+  .grid--3-cols , .grid--4-cols{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
